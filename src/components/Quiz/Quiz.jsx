@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Header() {
+function Quiz() {
     return (
         <div>
-            Header
+            Quiz
         </div>
     )
 }
 
-export default Header
+export default Quiz

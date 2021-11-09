@@ -1,8 +1,8 @@
 import React from "react";
-import Container from "@mui/material/Container";
 import MenuIcon from "@mui/icons-material/Menu";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import GTranslateIcon from "@mui/icons-material/GTranslate";
+import SendIcon from "@mui/icons-material/Send";
 import {
   AppBar,
   Button,
@@ -12,7 +12,6 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { Box, padding } from "@mui/system";
 
 function Header({ toggleDrawer }) {
   return (
@@ -20,33 +19,33 @@ function Header({ toggleDrawer }) {
       color="common"
       elevation={0}
       sx={{
-        // display:"flex",
-        // alignItems : "center",
-        // justifyContent:"space-between",
         width: "100%",
       }}
     >
       <Toolbar
         display="flex"
+        variant="dense"
         sx={{ justifyItems: "center", justifyContent: "space-between" }}
       >
         <div>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={() => toggleDrawer(true)}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Tooltip title="Question List">
+            <IconButton
+              size="small"
+              edge="start"
+              color="primary"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+              onClick={(e) => toggleDrawer(true, e)}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Tooltip>
 
           <Tooltip title="Zoom In">
             <IconButton
-              size="large"
+              size="small"
               edge="start"
-              color="inherit"
+              color="primary"
               aria-label="menu"
               sx={{ mr: 2 }}
             >
@@ -56,9 +55,9 @@ function Header({ toggleDrawer }) {
 
           <Tooltip title="Translate">
             <IconButton
-              size="large"
+              size="small"
               edge="start"
-              color="inherit"
+              color="primary"
               aria-label="menu"
               sx={{ mr: 2 }}
             >
@@ -70,26 +69,30 @@ function Header({ toggleDrawer }) {
         <Tooltip title="Question No.">
           <Card
             elevation={0}
-            sx={{ padding: "5px 10px", backgroundColor: "#e7e7e7" }}
+            sx={{ padding: "2px 10px", backgroundColor: "primary.light" }}
           >
-            <Typography variant="h6" color="initial" display="inline-block">
+            <Typography variant="h6" display="inline-block">
               12
-            </Typography>{" "}
-            <Typography
-              variant="subtitle2"
-              color="initial"
-              display="inline-block"
-            >
+            </Typography> {" "}
+            <Typography variant="subtitle2" display="inline-block">
               / 20
             </Typography>
           </Card>
         </Tooltip>
+
+        <Button
+          variant="contained"
+          size="small"
+          sx={{
+            backgroundColor: "danger.main",
+            fontWeight: "bold",
+            "&:hover": { backgroundColor: "danger.light" },
+          }}
+          endIcon={<SendIcon style={{ fontSize: "12px" }} />}
+        >
+          Submit
+        </Button>
       </Toolbar>
-      {/* <Container>
-        <Typography variant="h1" color="textSecondary">
-          secondary
-        </Typography>
-      </Container> */}
     </AppBar>
   );
 }

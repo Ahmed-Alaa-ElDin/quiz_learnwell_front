@@ -84,9 +84,9 @@ function Header({ toggleDrawer }) {
           variant="contained"
           size="small"
           sx={{
-            backgroundColor: "danger.main",
+            backgroundColor: "success.main",
             fontWeight: "bold",
-            "&:hover": { backgroundColor: "danger.light" },
+            "&:hover": { backgroundColor: "success.light" },
           }}
           endIcon={<SendIcon style={{ fontSize: "12px" }} />}
         >

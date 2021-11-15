@@ -44,7 +44,6 @@ export default function QuestionsList({ toggleDrawer, open }) {
             ].map((number, index) => (
               <Grid item sm={2} key={index} margin={0.5}>
                 <QuestionButton
-                  
                   number={number}
                 />
               </Grid>

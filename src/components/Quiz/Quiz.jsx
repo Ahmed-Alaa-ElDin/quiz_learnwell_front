@@ -8,7 +8,7 @@ import {
   Routes,
   Link,
 } from "react-router-dom";
-import SelectOneWO from "../SelectOneWO/SelectOneWO";
+import SelectOneWO from "./SelectOneWO/SelectOneWO";
 import BottomNav from "./BottomNav/BottomNav";
 import Header from "./Header/Header";
 import QuestionsList from "./QuestionList/QuestionsList";

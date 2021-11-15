@@ -1,15 +1,26 @@
+import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/system";
 import "./App.css";
-import Quiz from "./components/Quiz/Quiz";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./components/Home/JoinExam";
+import Login from "./components/Home/Login";
 
 import LearnWellTheme from "./theme/LearnWellTheme";
 
 function App() {
   const theme = LearnWellTheme;
+
   return (
-    <ThemeProvider theme={theme}>
-      <Quiz />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </ThemeProvider>
+    </Router>
   );
 }
 

@@ -86,7 +86,7 @@ function Login() {
             </Grid>
           </Grid>
           <Button variant="contained" sx={{ mt: 2 }}>
-            Start
+            Login
           </Button>
         </FormDiv>
       </LogoDiv>

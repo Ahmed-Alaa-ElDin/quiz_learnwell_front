@@ -17,6 +17,13 @@ const LearnWellTheme = createTheme({
         },
       },
     },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        input: {
+          backgroundColor: "#fff",
+        },
+      },
+    },
   },
 });
 
